@@ -2,11 +2,11 @@
 
 ### Contributors
 
-- [Catarina Pestana](https://github.com/catp98)
-- [David Vilaverde](https://github.com/dtrv95)
-- [Eduardo Faria](https://github.com/DaDim93)
-- [Francisco Coelho](https://github.com/coelhof12)
-- [Omid Pournejati](https://github.com/theomidious)
+- [Catarina Pestana](https://github.com/catp98) - @CatP98
+- [David Vilaverde](https://github.com/dtrv95) - @DTRV95
+- [Eduardo Faria](https://github.com/DaDim93) - @DaDim93
+- [Francisco Coelho](https://github.com/coelhof12) - @coelhof12 
+- [Omid Pournejati](https://github.com/theomidious) - @TheOmidious
 
 ## BRANCH LOGIC
 
