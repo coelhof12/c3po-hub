@@ -1,0 +1,81 @@
+/*------------------------------------*\
+            #WAITING PAGE
+\*------------------------------------*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+    color: #c9d1d9;
+    font-family: 'Fira Code', monospace;
+    margin: 0;
+    text-align: center;
+}
+
+.coming-soon {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+#countdown div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#countdown span {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.developers {
+    margin-top: 30px;
+    font-size: larger;
+}
+
+.github-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.github-button {
+    color: #58a6ff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 5px 0;
+    background-color: #333;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 220px;
+    height: 40px;
+}
+
+.github-button:hover {
+    background-color: #444;
+    transform: translateY(-5px);
+}
+
+.github-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
