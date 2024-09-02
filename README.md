@@ -14,7 +14,7 @@
 - develop - The integration branch where all feature branches are merged before being pushed to main. This branch is used for final testing and ensures that all features work together smoothly. All development work should be merged into develop before moving to main.
 - develop/documentation - This branch is dedicated to maintaining and updating the project documentation. Use this branch for any changes related to the README.md file or other documentation files. Once documentation changes are complete, they can be merged into develop.
 - develop/ui-design - This branch is focused on the UI/UX design of the project. It’s used for developing and refining the visual elements, including HTML, CSS, and JavaScript related to the user interface. After testing and refinement, merge changes into develop.
-- develop/api-integration - This branch handles the integration of external APIs into the project. Use it for fetching data, managing API requests, and handling responses. Once the API integration is complete and tested, merge it into develop.
+- routing - This branch is dedicated to the development and management of the application's routing logic. It focuses on defining, updating, and optimizing the paths, navigation flow, and route handling within the project. Changes here are merged into develop once they are stable and fully integrated with other features.
 
 New branches might be created if necessary.
 
