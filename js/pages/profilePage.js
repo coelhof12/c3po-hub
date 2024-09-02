@@ -1,0 +1,1 @@
+/* This page displays detailed information about a specific character. */
