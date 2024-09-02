@@ -1,4 +1,4 @@
-const container = document.getElementById('container');
+const container = document.getElementById('header');
 
  export function home() {
      container.innerHTML = `
