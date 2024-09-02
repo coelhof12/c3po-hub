@@ -1,27 +1,25 @@
-# SPA - Final Assignment Project
+# SPA - FINAL ASSIGNMENT PROJECT
 
-## PROJECT OVERVIEW 🚀
+
+## 🚀 PROJECT OVERVIEW 
 
 SPA Project | Building a themed single-page application using HTML, CSS, and JavaScript. Featuring dynamic data integration via REST APIs. Collaborative project for learning and mastering full-stack development.
 
-## Table of Contents
+
+## 📑 TABLE OF CONTENTS
 
 - [Project Overview](#project-overview-)
 - [Technologies Used](#technologies-used-)
 - [Branch Logic](#branch-logic)
 - [Setup Instructions](#setup-instructions-)
 - [Development Workflow](#development-workflow-)
+- [Project Directory Structure](#project-directory-structure-)
 - [License](#license-)
+- [Contributors](#Contributors-)
+- [Contact Us](#contact-us-)
 
-## Contributors
 
-- [Catarina Pestana](https://github.com/catp98)
-- [David Vilaverde](https://github.com/dtrv95)
-- [Eduardo Faria](https://github.com/DaDim93)
-- [Francisco Coelho](https://github.com/coelhof12)
-- [Omid Pournejati](https://github.com/theomidious)
-
-## BRANCH LOGIC
+## 🌳 BRANCH LOGIC 
 
 - **main** - Production-ready branch. Deployments to the live environment are triggered from here. Ensure all changes are fully tested before merging. Merge when the project is ready;
 - **develop** - The integration branch where all feature branches converge. Use this branch to test features together.
@@ -30,26 +28,30 @@ SPA Project | Building a themed single-page application using HTML, CSS, and Jav
 
 New branches might be created if necessary. Whenever you are working on a new feature, create a new branch sourcing from **develop**.
 
-## TECHNOLOGIES USED 🛠️
+
+## 🛠️ TECHNOLOGIES USED 
 
 - **HTML5:** Markup language used for structuring the content.
 - **CSS3:** Stylesheets for page layout and design, with separate CSS files for each page.
 - **JavaScript:** For adding interactivity and dynamic content, organized into page-specific files.
 
-## SETUP INSTRUCTIONS 📝
+
+## 📝 SETUP INSTRUCTIONS
 
 Copy Code:
 
 - **HTTPS:** `git clone https://github.com/coelhof12/coelhof12.github.io.git`
 - **SSH:** `git clone git@github.com:coelhof12/coelhof12.github.io.git`
 
-## DEVELOPMENT WORKFLOW 🔄
+
+## 🔄 DEVELOPMENT WORKFLOW 🔄
 
 - **HTML**: Develop the structure and layout.
 - **CSS**: Apply styling and ensure responsive design.
 - **JavaScript**: Add interactivity and API integration.
 
-## 📂 Project Directory Structure
+
+## 📂 PROJECT DIRECTORY STRUCTURE
 
 ```
 coelhof12.github.io
@@ -76,10 +78,21 @@ coelhof12.github.io
 └── README.md
 ```
 
-## LICENSE 📜
+
+## 📜 LICENSE 
 
 This project is open-source and available under the MIT License.
 
-## CONTACT US 📬
+
+## 👥  CONTRIBUTORS
+
+- [Catarina Pestana](https://github.com/catp98)
+- [David Vilaverde](https://github.com/dtrv95)
+- [Eduardo Faria](https://github.com/DaDim93)
+- [Francisco Coelho](https://github.com/coelhof12)
+- [Omid Pournejati](https://github.com/theomidious)
+
+
+## 📬 CONTACT US 
 
 For any questions or suggestions, feel free to reach out with the developers in the top of this document.
