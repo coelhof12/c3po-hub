@@ -22,32 +22,6 @@ New branches might be created if necessary.
 
 SPA Project | Building a themed single-page application using HTML, CSS, and JavaScript. Featuring dynamic data integration via REST APIs. Collaborative project for learning and mastering full-stack development.
 
-## PROJECT STRUCTURE 🗂️
-
-```
-/ (Root Directory)
-│
-├── index.html          # Main HTML file, located in the root directory
-│
-├── css/                # Directory for CSS files
-│   └── style.css       # Main stylesheet
-│
-├── js/                 # Directory for JavaScript files
-│   └── script.js       # Main JavaScript file
-│
-├── img/                # Directory for images (if needed)
-│   └── example.png     # Example image file
-│
-├── assets/             # Directory for other assets (e.g., fonts, media)
-│   └── fonts/          # Subdirectory for fonts (if needed)
-│
-├── README.md           # Project documentation
-│
-├── .gitignore          # Git ignore file to exclude unnecessary files from version control
-│
-└── LICENSE             # License file (optional)
-```
-
 ## TECHNOLOGIES USED 🛠️
 
 - HTML5: Markup language used for structuring the content.

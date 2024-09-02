@@ -1,33 +1,22 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page Title</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Character Explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
+    <div id="page-wrap">
+        <div class="c3po-container">
+            <img id="cp30-avatar" href="#" alt="cp30 avatar">
+            <div class="c3po-feedback" style ="--img:url(comment-box.png)">
+                <p id="c3po-text">"Greetings, I am C-3PO, human-cyborg relations. Welcome to the Star Wars Character Explorer! Here, you can explore detailed profiles of your favorite characters from the galaxy far, far away."</p>
+            </div>
+        </div>
+    </div>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This Wil be the best SPA ever.</p>
-  <script src="js/app.js"></script>
-
+    <script src="js/swapiService.js"></script>
+    <script src="js/app.js"></script>
 </body>
-
 </html>
