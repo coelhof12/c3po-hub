@@ -9,9 +9,28 @@ const container = document.getElementById('header');
 
  export function authentication() {
      container.innerHTML = `
-         <h1>Authentication Page</h1>
-         <p>Please log in to continue.</p>
-     `
+        <h1>Authentication Page</h1>
+        <p>Please log in to continue.</p>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+     `;
+
+    // Add form submission handler
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // For demonstration purposes, we'll just log the values
+        console.log(`Username: ${username}, Password: ${password}`);
+        
+        // You can add your authentication logic here
+    });
  }
 
  export function chooseSide() {
