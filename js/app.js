@@ -1,4 +1,4 @@
-import { renderPage } from "./routes.js";
+import { renderPage } from "./router.js";
 
 // Set up event listener for navigation anchors
 document.querySelectorAll('nav a').forEach(anchor => {
@@ -7,10 +7,8 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
         // Get the path from the anchor
         const path = event.target.getAttribute('href');
-
         // Change URL using pushState
         window.history.pushState({}, '', path);
-
         renderPage(path);
     });
 });
