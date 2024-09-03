@@ -14,7 +14,8 @@ import { renderPage as renderContentPage } from "./router.js";
    =============== Render: Homepage Content =================
    ========================================================== */
 
-   export function home() {
+export function home() {
+    document.body.className = 'home-page'; // Apply home page styles
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `
         <h1>Welcome to Star Wars Character Explorer</h1>
@@ -33,6 +34,8 @@ import { renderPage as renderContentPage } from "./router.js";
    ========================================================== */
    
 export function authentication() {
+    document.body.className = ''; // No specific styles for this page
+    const container = document.querySelector('#page-wrap');
     container.innerHTML = `
         <h1>Authentication Page</h1>
         <p>Please log in to continue.</p>
@@ -44,23 +47,48 @@ export function authentication() {
             <button type="submit">Login</button>
         </form>
     `;
-    // Add form submission handler here
-}    
+    // Add form submission handler here <----------------------------------------------------------------
+}
 
 /* ==========================================================
    ============== Render: Choose Side Content ===============
    ========================================================== */
 export function chooseSide() {
-    container.innerHTML = `
+    document.body.className = 'choose-side-page'; // Apply choose side page styles
+        const container = document.querySelector('#page-wrap');
+        container.innerHTML = `
         <h1>Choose Your Side</h1>
         <p>Will you join the Light Side or the Dark Side?</p>
+        <div>
+            <button id="goodSideButton">
+                <img src="./img/choose_side_jedi.png">
+            </button>
+            <button id="badSideButton">
+                <img src="./img/choose_side_sith.png">
+            </button>
+        </div>
     `;
+
+    // Add event listeners to buttons
+    document.getElementById('goodSideButton').addEventListener('click', function() {
+        console.log('Good Side Button Clicked');
+        window.history.pushState({}, '', '/good-side');
+        renderPage('/good-side');
+    });
+
+    document.getElementById('badSideButton').addEventListener('click', function() {
+        console.log('Bad Side Button Clicked');
+        window.history.pushState({}, '', '/bad-side');
+        renderPage('/bad-side');
+    });
 }
 
 /* ==========================================================
    =============== Render: Good Side Content ================
    ========================================================== */
 export function goodSide() {
+    document.body.className = ''; // No specific styles for this page
+    const container = document.querySelector('#page-wrap');
     container.innerHTML = `
         <h1>The Light Side</h1>
         <p>Welcome to the Light Side. Here are the heroes of the Star Wars universe.</p>
@@ -71,6 +99,8 @@ export function goodSide() {
    =============== Render: Bad Side Content =================
    ========================================================== */
 export function badSide() {
+    document.body.className = ''; // No specific styles for this page
+    const container = document.querySelector('#page-wrap');
     container.innerHTML = `
         <h1>The Dark Side</h1>
         <p>Welcome to the Dark Side. Here are the villains of the Star Wars universe.</p>
@@ -98,25 +128,28 @@ export function renderPage(path) {
             badSide();
             break;
         default:
-            home(); // Default to home page if path doesn't match
+            home(); // Default to home page if path doesn't match - WE COULD DO A 404 PAGE HERE INSTEAD
             break;
     }
 }
 
 /* ==========================================================
-   ====== Set Event Listener for Navigation Anchors =========
+   ====== Set Event Listener for Navigation Buttons =========
    ========================================================== */
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevents browser from triggering GET request
+document.querySelectorAll('nav button').forEach(button => {
+    button.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevents any default behavior (not strictly necessary for buttons)
 
-        // Get the path from the anchor
-        const path = event.target.getAttribute('href');
+        // Get the path from the button's data attribute
+        const path = event.target.getAttribute('data-path');
+
         // Change URL using pushState
         window.history.pushState({}, '', path);
+
+        // Render the appropriate page
         renderPage(path);
     });
-});
+})
 
 /* ==========================================================
    ======= Handle Browser Back and Forward Buttons ==========

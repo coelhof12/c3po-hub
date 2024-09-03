@@ -1,8 +1,12 @@
-/* Import the Font */
+/* Import the Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
 
-/* General Body Style */
-body {
+/* ==========================================================
+   ================== Home Page Styles ======================
+   ========================================================== */
+
+body.home-page {
     font-family: 'Orbitron', sans-serif;
     background: linear-gradient(180deg, #000000 0%, #333333 100%);
     color: #FFD700;
@@ -15,7 +19,7 @@ body {
     z-index: 1;
 }
 
-body::before {
+body.home-page::before {
     content: "";
     position: absolute;
     top: 0;
@@ -26,7 +30,40 @@ body::before {
     z-index: -1;
 }
 
-/* Navigation Bar */
+/* Button Styling */
+nav button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 20px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    cursor: pointer; /* Make sure the cursor is a pointer on hover */
+}
+
+nav button:hover {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFD700;
+    border-bottom: 2px solid #FFD700;
+    background-color: #FFD700;
+    color: #000000;
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+}
+
+/* Ensures no extra styling is inherited from buttons */
+nav button:focus {
+    outline: none;
+}
+
+/* Navigation Bar Styling */
 nav {
     background: linear-gradient(180deg, #111111, #333333);
     padding: 20px;
@@ -38,33 +75,18 @@ nav {
     text-align: center;
 }
 
-nav a {
-    color: #FFD700;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-nav a:hover {
-    color: #FFFFFF;
-    text-shadow: 0 0 10px #FFD700;
-    border-bottom: 2px solid #FFD700;
-}
-
 /* Main Content */
-#page-wrap {
+body.home-page #page-wrap {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 100px; /* Adjusted for the fixed nav */
+    padding-top: 100px; 
     margin-top: 60px;
     color: #FFD700;
     position: relative;
     z-index: 10;
 }
 
-.c3po-container {
+body.home-page .c3po-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,20 +94,20 @@ nav a:hover {
     position: relative;
 }
 
-#cp3o-avatar {
+body.home-page #cp3o-avatar {
     width: 200px;
     height: auto;
     margin-right: 20px;
 }
 
-.c3po-feedback {
+body.home-page .c3po-feedback {
     display: inline-block;
     padding: 20px;
     background-color: #000000;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-    width: 600px; /* Fixed width for the container */
-    height: 150px; /* Fixed height for the container */
+    width: 600px; 
+    height: 150px; 
     margin: 0 auto;
     font-size: 18px;
     line-height: 1.5;
@@ -95,7 +117,7 @@ nav a:hover {
     overflow: hidden; /* Ensure text stays within the box */
 }
 
-.c3po-feedback p {
+body.home-page .c3po-feedback p {
     border-right: .15em solid #FFD700;
     white-space: normal; /* Allow text to wrap */
     overflow: hidden;
@@ -106,9 +128,8 @@ nav a:hover {
         blink-caret .75s step-end infinite;
 }
 
-
 /* Footer */
-footer {
+body.home-page footer {
     background-color: #000000;
     padding: 20px;
     text-align: center;
@@ -130,29 +151,93 @@ footer {
     50% { border-color: #FFD700; }
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
+/* ==========================================================
+   =============== Choose Side Page Styles ==================
+   ========================================================== */
+
+   body.choose-side-page {
+    background: url('/img/SWSpace_bg.png') center/cover no-repeat fixed;
+    color: #FFD700;
+}
+
+/* Header Styling */
+body.choose-side-page h1, 
+body.choose-side-page p {
+    font-family: 'Pathway Gothic One', sans-serif;
+    text-align: center;
+    color: rgb(255, 255, 255); /* Ensure text is visible against background */
+}
+
+/* Container for Side Selection Buttons */
+body.choose-side-page #header div {
+    display: flex;
+    gap: 20px; /* Space between the buttons */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+    margin-top: 20px; /* Additional space above the buttons */
+}
+
+/* Button Styling */
+body.choose-side-page button {
+    display: flex;
+    align-items: center;
     padding: 10px 20px;
-    margin: 20px 10px;
     border: 2px solid #FFD700;
     border-radius: 5px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
     color: #FFD700;
     text-transform: uppercase;
-    text-decoration: none;
     font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-.btn:hover {
+body.choose-side-page button:hover {
     background-color: #FFD700;
     color: #000000;
-    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    box-shadow: 0 0 15px #FFD700, 0 0 20px #FFD700;
 }
 
-/* Responsive Design */
+/* Style for the card container (C-3PO) */
+body.choose-side-page .c3po-container {
+    display: flex;
+    align-items: center;
+    background-color: #1b1a1a;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    max-width: 600px; /* Maximum width of the card */
+    margin: 40px auto; /* Center the card horizontally and add margin */
+}
+
+/* Style for the C-3PO avatar */
+body.choose-side-page #cp30-avatar {
+    width: 100px;  /* Set a standard size for the avatar */
+    height: auto;  /* Maintain aspect ratio */
+    border-radius: 50%; /* Keep it circular */
+    margin-right: 20px; /* Space between avatar and text */
+    display: block;
+}
+
+/* Style for the text container */
+body.choose-side-page .c3po-text-container {
+    flex: 1; /* Allow the text container to take up the remaining space */
+}
+
+/* C-3PO Text Styling */
+body.choose-side-page #c3po-text {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
+   ============== Responsive Design for All Pages ===========
+   ========================================================== */
+
 @media (max-width: 768px) {
     nav {
         text-align: center;
@@ -168,7 +253,7 @@ footer {
         margin-top: 100px;
     }
 
-    #cp3oe-avatar {
+    body.home-page #cp3o-avatar, body.choose-side-page #cp30-avatar {
         width: 150px;
         margin-bottom: 20px;
     }
@@ -179,7 +264,10 @@ footer {
     }
 }
 
-/* Fade-In Animation */
+/* ==========================================================
+   =================== Animations ===========================
+   ========================================================== */
+
 @keyframes fadeIn {
     from {
         opacity: 0;

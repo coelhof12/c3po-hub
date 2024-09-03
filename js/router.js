@@ -17,6 +17,6 @@ import { home, authentication, chooseSide, goodSide, badSide } from './app.js';
      if (route) {
          route.page();
      } else {
-         home(); // Default to home if no match is found
+         home(); // Default to home if no match is found - WE COULD DO A 404 PAGE HERE INSTEAD
      }
  }
