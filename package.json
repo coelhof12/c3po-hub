@@ -1,6 +1,7 @@
 {
   "name": "coelhof12.github.io",
   "version": "0.0.1",
+  "type": "module",
   "description": "### Contributors",
   "private": true,
   "keywords": [],

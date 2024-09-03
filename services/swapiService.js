@@ -1,12 +1,23 @@
 /* This file manages API calls to the Star Wars API. */
 
-//JSON file is read and parsed into a JavaScript object automatically and assignid to the variable 'affiliationData';
-import affiliationData from './charactersAffiliation.json';
-
 const BASE_URL = 'https://swapi.dev/api';
 
+// Function to fetch the characters affiliation data dynamically
+const fetchAffiliationData = async () => {
+    try {
+        const response = await fetch('./charactersAffiliation.json');
+        if (!response.ok) {
+            throw new Error('Failed to load affiliation data');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching affiliation data:", error);
+        return [];
+    }
+};
+
 const fetchAllCharactersParallel = async () => {
-   
     const url = `${BASE_URL}/people/`;
     let allCharacters = [];
 
@@ -26,13 +37,13 @@ const fetchAllCharactersParallel = async () => {
 
         // Fetch all pages in parallel
         const results = await Promise.all(fetchPromises);
-        
+
         // Combine all results
         allCharacters = [...firstData.results]; // Start with the first page data
         results.forEach(pageData => {
             allCharacters.push(...pageData.results); // Add results from next pages
         });
-        
+
         return allCharacters;
 
     } catch (error) {
@@ -70,20 +81,20 @@ const getAttribute = async (name, attribute) => {
 const displayCharacters = async () => {
     const characters = await fetchAllCharactersParallel();
     console.log(characters);
-}
+};
 
 /* Display characters by affiliation side */
-const displayCharacterBySide = async(side) => {
-
-    try{
+const displayCharacterBySide = async (side) => {
+    try {
         const characters = await fetchAllCharactersParallel();
+        const affiliationData = await fetchAffiliationData(); // Fetch affiliation data dynamically
         const affiliationCharacters = affiliationData
             .filter(character => character.side === side)
             .map(character => character.name);
 
-        const filteredCharacters = characters.filter(character => 
+        const filteredCharacters = characters.filter(character =>
             affiliationCharacters.includes(character.name));
-        
+
         console.log(filteredCharacters);
 
     } catch (error) {
@@ -91,31 +102,43 @@ const displayCharacterBySide = async(side) => {
     }
 };
 
-const fetchCharacterByName = async(name) => {
+const fetchCharacterByName = async (name) => {
     const characters = await fetchAllCharactersParallel();
     return characters.find(character => character.name === name);
-}
+};
+
 const displayCharAttributes = async (attribute, name) => {
     const result = await getAttribute(name, attribute);
     console.log(result);
 };
 
-const displayCharFilms = async(name) => {
+const displayCharFilms = async (name) => {
     displayCharAttributes('films', name);
 };
 
-const displayCharPlanets = async(name) => {
+const displayCharPlanets = async (name) => {
     displayCharAttributes('homeworld', name);
 };
 
-const displayStarships = async(name) => {
+const displayStarships = async (name) => {
     displayCharAttributes('starships', name);
 };
 
-const displayCharSpecies = async(name) => {
+const displayCharSpecies = async (name) => {
     displayCharAttributes('species', name);
 };
 
-const displayCharVehicles = async(name) => {
+const displayCharVehicles = async (name) => {
     displayCharAttributes('vehicles', name);
+};
+
+// Exporting the functions to be used in other parts of the application
+export {
+    displayCharacters,
+    displayCharacterBySide,
+    fetchCharacterByName,
+    displayCharFilms,
+    displayStarships,
+    displayCharSpecies,
+    displayCharVehicles
 };
