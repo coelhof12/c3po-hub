@@ -1,49 +1,121 @@
 /* This file manages API calls to the Star Wars API. */
-import affiliationData from './charactersAffiliation.json';
 
-const affiliationMapping = affiliationData;
+//JSON file is read and parsed into a JavaScript object automatically and assignid to the variable 'affiliationData';
+import affiliationData from './charactersAffiliation.json';
 
 const BASE_URL = 'https://swapi.dev/api';
 
+const fetchAllCharactersParallel = async () => {
+   
+    const url = `${BASE_URL}/people/`;
+    let allCharacters = [];
+
+    try {
+        // Fetch 1st page + get total number of pages
+        const firstResponse = await fetch(url);
+        const firstData = await firstResponse.json();
+        const totalChars = firstData.count; // Total number of characters
+        const charsPerPage = firstData.results.length; // Number of characters per page
+        const totalPages = Math.ceil(totalChars / charsPerPage);
+
+        // Create an array of fetch promises for pages 2 to totalPages
+        const fetchPromises = [];
+        for (let i = 2; i <= totalPages; i++) {
+            fetchPromises.push(fetch(`${url}?page=${i}`).then(resp => resp.json()));
+        }
+
+        // Fetch all pages in parallel
+        const results = await Promise.all(fetchPromises);
+        
+        // Combine all results
+        allCharacters = [...firstData.results]; // Start with the first page data
+        results.forEach(pageData => {
+            allCharacters.push(...pageData.results); // Add results from next pages
+        });
+        
+        return allCharacters;
+
+    } catch (error) {
+        console.error("Error fetching characters:", error);
+        return [];
+    }
+};
+
+const getAttribute = async (name, attribute) => {
+    try {
+        // Fetch characters once
+        const characters = await fetchAllCharactersParallel();
+
+        // Check if the attribute exists in any character
+        const attributeExists = characters.some(character => Object.keys(character).includes(attribute));
+        if (!attributeExists) {
+            return `Attribute ${attribute} does not exist in any character.`;
+        }
+
+        // Find the character by name
+        const character = characters.find(character => character.name === name);
+        if (character) {
+            // Return the attribute value or a message if the attribute does not exist for this character
+            return character[attribute] || `Attribute ${attribute} not found for character ${name}`;
+        } else {
+            return `Character ${name} not found.`;
+        }
+    } catch (error) {
+        console.error("Error getting attribute:", error);
+        return `Error retrieving attribute: ${error.message}`;
+    }
+};
+
 /* Display a list of characters */
 const displayCharacters = async () => {
-    let characters = [];
-    let url = '${BASE_URL}/people/';
+    const characters = await fetchAllCharactersParallel();
+    console.log(characters);
+}
 
-    // do the fetch and returns a promise object
-    // the await stalls the program, stopping it from assigning any 
-    // value to the variable (response) until the promise is resolved
-    // when the promise is resolved, we can take the value from that 
-    // resolved funtion and assign it to the variable
-
-    const response = await fetch(url); // returns a promise assigned to 'response'
-
-    if(!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(errorMessage);
-    }
-
-    const data = await response.json();
-    characters = data.results;
-    return characters;
-};
-
+/* Display characters by affiliation side */
 const displayCharacterBySide = async(side) => {
-    const characters = await displayCharacters;
 
-    return characters.filter(character => {
-        const affiliation = affiliationMapping;
-    })
+    try{
+        const characters = await fetchAllCharactersParallel();
+        const affiliationCharacters = affiliationData
+            .filter(character => character.side === side)
+            .map(character => character.name);
+
+        const filteredCharacters = characters.filter(character => 
+            affiliationCharacters.includes(character.name));
+        
+        console.log(filteredCharacters);
+
+    } catch (error) {
+        console.error("Error displaying characters by side:", error);
+    }
 };
 
-const displayCharacterById = async(id) =>{};
+const fetchCharacterByName = async(name) => {
+    const characters = await fetchAllCharactersParallel();
+    return characters.find(character => character.name === name);
+}
+const displayCharAttributes = async (attribute, name) => {
+    const result = await getAttribute(name, attribute);
+    console.log(result);
+};
 
-const displayCharacterByName = async(name) => {};
+const displayCharFilms = async(name) => {
+    displayCharAttributes('films', name);
+};
 
-const displayStarWarsfilms = async() => {};
+const displayCharPlanets = async(name) => {
+    displayCharAttributes('homeworld', name);
+};
 
-const displayStarships = async() => {};
+const displayStarships = async(name) => {
+    displayCharAttributes('starships', name);
+};
 
-const displaySpecies = async() => {};
+const displayCharSpecies = async(name) => {
+    displayCharAttributes('species', name);
+};
 
-const displayVehicles = async() => {};
+const displayCharVehicles = async(name) => {
+    displayCharAttributes('vehicles', name);
+};
