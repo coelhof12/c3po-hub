@@ -1,4 +1,4 @@
-import { home, authentication, chooseSide, goodSide, badSide } from './render.js';
+import { home, authentication, chooseSide, goodSide, badSide } from './app.js';
 
  // Create routing for pages
  const routes = [
