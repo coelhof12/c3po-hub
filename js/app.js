@@ -124,11 +124,42 @@ export function authentication() {
    =============== Render: Good Side Content ================
    ========================================================== */
 export function goodSide() {
-    document.body.className = ''; // No specific styles for this page
+    document.body.className = 'good-side-page'; // No specific styles for this page
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `
         <h1>The Light Side</h1>
         <p>Welcome to the Light Side. Here are the heroes of the Star Wars universe.</p>
+        
+        <div class="image-container">
+    <div class="circular-image">
+        <a href="???">
+            <img src="./img/heroes/luke_portrait.png" alt="Luke Skywalker">
+        </a>
+    </div>
+
+    <div class="circular-image">
+        <a href="???">
+            <img src="./img/heroes/hanSolo_portrait.png" alt="Solo">
+        </a>
+    </div>
+
+    <div id="yoda" class="circular-image">
+        <a href="???">
+        <img src="./img/heroes/yoda_portrait.png" alt="Yoda">
+        </a>
+    </div>
+
+    <div id="kenobi" class="circular-image">
+        <a href="???">
+        <img src="./img/heroes/kenobi_portrait.png" alt="Kenobi">
+        </a>
+    </div>
+
+    <div id="leia" class="circular-image">
+        <a href="???">
+        <img src="./img/heroes/leia_portrait.png" alt="Leia">
+        </a>
+    </div>
     `;
 }
 
