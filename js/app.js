@@ -129,6 +129,8 @@ export function goodSide() {
     container.innerHTML = `
         <h1>The Light Side</h1>
         <p>Welcome to the Light Side. Here are the heroes of the Star Wars universe.</p>
+
+        <div id="spinner" class="spinner"></div>
         
         <div class="image-container">
             <div class="circular-image" data-name="Luke Skywalker">
@@ -165,12 +167,30 @@ export function goodSide() {
 // Add event listeners to character buttons
 function attachCharacterClickEvents() {
     const images = document.querySelectorAll('.circular-image');
-    
+    const spinner = document.getElementById('spinner');
+
     images.forEach(image => {
-        image.addEventListener('click', async (event) => {
+        image.addEventListener('click', async () => {
             const characterName = image.getAttribute('data-name');
-            const characterData = await fetchCharacterByName(characterName);
-            showCharacterModal(characterData);
+
+            // Show the spinner by adding the CSS class
+            spinner.classList.add('show-spinner');
+
+            try {
+                // Fetch the character data
+                const characterData = await fetchCharacterByName(characterName);
+
+                // Hide the spinner once data is fetched
+                spinner.classList.remove('show-spinner');
+
+                // Show the character data in the modal
+                showCharacterModal(characterData);
+
+            } catch (error) {
+                // In case of an error, hide the spinner and handle the error
+                spinner.classList.remove('show-spinner');
+                console.error("Error fetching character data:", error);
+            }
         });
     });
 
