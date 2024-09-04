@@ -228,9 +228,9 @@ body.page-not-found p {
 /* ==========================================================
    =============== Good Side Page Styles ==================
    ========================================================== */
-    body.good-side-page{
+body.good-side-page{
         background: url('/img/SWSpace_bg.png') center/cover no-repeat fixed;
-    }
+}
 
     body.good-side-page h1, 
 body.good-side-page p {
@@ -273,6 +273,56 @@ body.good-side-page p {
     text-decoration: none; /* Removes any default underline */
     cursor: pointer;
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #333;
+    color: #FFD700;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-button {
+    color: #FFD700;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Spinner animation */
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.1); /* Light transparent border */
+    border-top: 8px solid #FFD700; /* Golden color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Spinner animation */
+    margin: 20px auto;
+    display: none; /* Hidden by default */
+}
+
+/* Keyframes for the spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 /* ==========================================================
    ============== Responsive Design for All Pages ===========
