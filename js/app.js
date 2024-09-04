@@ -14,12 +14,16 @@ import { renderPage as renderContentPage } from "./router.js";
    =============== Render: Homepage Content =================
    ========================================================== */
 
-export function home() {
+   export function home() {
     document.body.className = 'home-page'; // Apply home page styles
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `
         <h1>Welcome to Star Wars Character Explorer</h1>
         <p>This is the homepage where you can begin your journey.</p>
+        <div class="button-container">
+            <button id="loginButton">Log In</button>
+            <button id="beginButton">Begin</button>
+        </div>
         <div class="c3po-container">
             <img id="cp30-avatar" src="./img/c3po_avatar.png" alt="C-3PO avatar">
             <div class="c3po-feedback">
@@ -27,6 +31,17 @@ export function home() {
             </div>
         </div>
     `;
+
+    // Add event listeners to buttons
+    document.getElementById('loginButton').addEventListener('click', function() {
+        window.history.pushState({}, '', '/authentication');
+        renderPage('/authentication');
+    });
+
+    document.getElementById('beginButton').addEventListener('click', function() {
+        window.history.pushState({}, '', '/choose-side');
+        renderPage('/choose-side');
+    });
 }
 
 /* ==========================================================
@@ -37,7 +52,7 @@ export function authentication() {
     document.body.className = ''; // No specific styles for this page
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `
-        <h1>Authentication Page</h1>
+             <h1>Authentication Page</h1>
         <p>Please log in to continue.</p>
         <form id="loginForm">
             <label for="username">Username:</label>
@@ -46,25 +61,32 @@ export function authentication() {
             <input type="password" id="password" name="password" required><br><br>
             <button type="submit">Login</button>
         </form>
+        <button id="backButton">Back</button> <!-- Added Back button -->
     `;
+    // Add event listeners to buttons
+    document.getElementById('backButton').addEventListener('click', function() {
+        window.history.pushState({}, '', '/');
+        renderPage('/');
+    });
     // Add form submission handler here <----------------------------------------------------------------
 }
 
 /* ==========================================================
    ============== Render: Choose Side Content ===============
    ========================================================== */
-export function chooseSide() {
+   export function chooseSide() {
     document.body.className = 'choose-side-page'; // Apply choose side page styles
-        const container = document.querySelector('#page-wrap');
-        container.innerHTML = `
+    const container = document.querySelector('#page-wrap');
+    container.innerHTML = `
+        <button class="back-button" id="backButton">Back</button> <!-- Back button added -->
         <h1>Choose Your Side</h1>
         <p>Will you join the Light Side or the Dark Side?</p>
-        <div>
+        <div class="button-container">
             <button id="goodSideButton">
-                <img src="./img/choose_side_jedi.png">
+                <img src="./img/choose_side_jedi.png" alt="Light Side">
             </button>
             <button id="badSideButton">
-                <img src="./img/choose_side_sith.png">
+                <img src="./img/choose_side_sith.png" alt="Dark Side">
             </button>
         </div>
     `;
@@ -80,6 +102,12 @@ export function chooseSide() {
         console.log('Bad Side Button Clicked');
         window.history.pushState({}, '', '/bad-side');
         renderPage('/bad-side');
+    });
+
+    // Back button event listener
+    document.getElementById('backButton').addEventListener('click', function() {
+        window.history.pushState({}, '', '/');
+        renderPage('/');
     });
 }
 
