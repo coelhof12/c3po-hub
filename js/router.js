@@ -13,6 +13,11 @@ const routes = {
         title: "Home",
         description: "This is the home page",
     },
+    "/home": {
+        handler: home,
+        title: "Home",
+        description: "This is the home page",
+    },
     "/authentication": {
         handler: authentication,
         title: "Authentication",
