@@ -29,6 +29,8 @@
   },
   "homepage": "https://github.com/coelhof12/coelhof12.github.io#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "node": "^22.8.0",
+    "server.js": "^1.0.0"
   }
 }

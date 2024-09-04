@@ -48,3 +48,7 @@ This project is open-source and available under the MIT License.
 ## CONTACT US 📬
 
 For any questions or suggestions, feel free to reach out with the developers in the top of this document.
+
+
+npm install express
+node server.js
