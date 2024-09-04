@@ -16,6 +16,13 @@ import { renderPage as renderContentPage } from "./router.js";
 
    export function home() {
     document.body.className = 'home-page'; // Apply home page styles
+    
+    // Dynamically add the background image
+    document.body.style.backgroundImage = "url('./img/SWSpace_bg.png')";
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed'; // Ensures the image stays in place
+    
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `
         <h1>Welcome to Star Wars Character Explorer</h1>
@@ -27,7 +34,9 @@ import { renderPage as renderContentPage } from "./router.js";
         <div class="c3po-container">
             <img id="cp30-avatar" src="./img/c3po_avatar.png" alt="C-3PO avatar">
             <div class="c3po-feedback">
-                <p id="c3po-text">Greetings, I am C-3PO, human-cyborg relations. Welcome to the Star Wars Character Explorer! Here, you can explore detailed profiles of your favorite characters from the galaxy far, far away.</p>
+                <p id="c3po-text">
+                    <span>Greetings, I am C-3PO, human-cyborg relations. Welcome to the Star Wars Character Explorer! Here, you can explore detailed profiles of your favorite characters from the galaxy far, far away.</span>
+                </p>
             </div>
         </div>
     `;
@@ -170,7 +179,7 @@ export function badSide() {
    ========================================================== */
    export function renderPage(path) {
     // Treat /index.html as the homepage
-    if (path === '/index.html' || path === '/') { // Temporarily added this "if" statement to handle URLs like "/index.html" and not as an error page during development. REMOVE BEFORE DEPLOY.
+    if (path === '/index.html' || path === '/') { // Temporarily added this "if" statement to handle URLs like "/index.html" and not as an error page during development. REMOVE BEFORE DEPLOY or not its the same thing.
         home();
     } else {
         switch (path) {
