@@ -278,6 +278,42 @@ body.choose-side-page #c3po-text {
 }
 
 /* ==========================================================
+   =============== 404 Page Not Found Styles ================
+   ========================================================== */
+   body.page-not-found {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(180deg, #000000 0%, #333333 100%);
+    color: #FFD700;
+    text-align: center;
+    padding-top: 10px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.not-found-container {
+    text-align: center;
+}
+
+.not-found-image {
+    max-width: 300px; /* Adjust the size of the image */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+body.page-not-found h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+body.page-not-found p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================
    ============== Responsive Design for All Pages ===========
    ========================================================== */
 

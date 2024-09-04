@@ -136,28 +136,60 @@ export function badSide() {
 }
 
 /* ==========================================================
+   =============== Render: 404 Not Found Page ===============
+   ========================================================== */
+   export function pageNotFound() {
+    document.body.className = 'page-not-found'; // Reset body class
+    
+    // Dynamically add the background image
+    document.body.style.backgroundImage = "url('./img/SWSpace_bg.png')";
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed'; // Ensures the image stays in place
+    
+    const container = document.querySelector('#page-wrap');
+    container.innerHTML = `
+        <div class="not-found-container">
+            <img src="./img/cp3o_not_found_404.png" alt="cp3o not found" class="not-found-image">
+            <h1>404 - Page Not Found</h1>
+            <p>Oops! The page you're looking for doesn't exist.</p>
+            <button id="backButton">Go to Homepage</button>
+        </div>
+    `;
+
+    // Add event listener for the Go to Homepage button
+    document.getElementById('backButton').addEventListener('click', function() {
+        window.history.pushState({}, '', '/');
+        renderPage('/');
+    });
+}
+
+
+/* ==========================================================
    ====== Render Appropriate Page Based on the URL ==========
    ========================================================== */
-export function renderPage(path) {
-    switch (path) {
-        case '/':
-            home();
-            break;
-        case '/authentication':
-            authentication();
-            break;
-        case '/choose-side':
-            chooseSide();
-            break;
-        case '/good-side':
-            goodSide();
-            break;
-        case '/bad-side':
-            badSide();
-            break;
-        default:
-            home(); // Default to home page if path doesn't match - WE COULD DO A 404 PAGE HERE INSTEAD
-            break;
+   export function renderPage(path) {
+    // Treat /index.html as the homepage
+    if (path === '/index.html' || path === '/') { // Temporarily added this "if" statement to handle URLs like "/index.html" and not as an error page during development. REMOVE BEFORE DEPLOY.
+        home();
+    } else {
+        switch (path) {
+            case '/authentication':
+                authentication();
+                break;
+            case '/choose-side':
+                chooseSide();
+                break;
+            case '/good-side':
+                goodSide();
+                break;
+            case '/bad-side':
+                badSide();
+                break;
+            default:
+                pageNotFound(); // Render 404 page if path doesn't match
+                break;
+        }
     }
 }
 
