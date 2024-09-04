@@ -278,6 +278,55 @@ body.choose-side-page #c3po-text {
 }
 
 /* ==========================================================
+   =============== Good Side Page Styles ==================
+   ========================================================== */
+    body.good-side-page{
+        background: url('/img/SWSpace_bg.png') center/cover no-repeat fixed;
+    }
+
+    body.good-side-page h1, 
+body.good-side-page p {
+    font-family: 'Orbitron', sans-serif; /* Match the font from the homepage */
+    text-align: center;
+    color: #FFD700; /* Ensure text is visible against background */
+    text-transform: uppercase; /* Optional to match uppercase style */
+}
+
+/* Container to hold the circular images */
+.image-container {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    gap: 20px; /* Controls the spacing between the images */
+    margin-top: 20px; /* Adds space at the top if needed */
+}
+
+   .circular-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block; /* Ensures proper inline layout */
+}
+
+
+
+.circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire div */
+    display: block; /* Removes any gaps below the image */
+}
+
+/* Ensures the entire circular area is clickable */
+.circular-image a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Removes any default underline */
+    cursor: pointer;
+}
+
+/* ==========================================================
    ============== Responsive Design for All Pages ===========
    ========================================================== */
 
