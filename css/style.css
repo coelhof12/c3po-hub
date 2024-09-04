@@ -30,11 +30,13 @@ body.home-page::before {
     z-index: -1;
 }
 
-/* Button Styling */
-nav button {
+nav button, 
+#loginButton, 
+#beginButton, 
+#backButton {
     display: inline-block;
+    margin: 20px auto;
     padding: 10px 20px;
-    margin: 0 20px;
     border: 2px solid #FFD700;
     border-radius: 5px;
     background-color: transparent;
@@ -43,20 +45,39 @@ nav button {
     font-size: 18px;
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    cursor: pointer; /* Make sure the cursor is a pointer on hover */
 }
 
-nav button:hover {
-    color: #FFFFFF;
-    text-shadow: 0 0 10px #FFD700;
-    border-bottom: 2px solid #FFD700;
+/* Hover Effect */
+nav button:hover, 
+#loginButton:hover, 
+#beginButton:hover, 
+#backButton:hover {
     background-color: #FFD700;
     color: #000000;
-    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    box-shadow: 0 0 15px #FFD700, 0 0 20px #FFD700;
 }
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 20px;
+}
+
+#loginButton, #beginButton {
+    width: 200px; /* Set a fixed width for the buttons */
+}
+
+/* Center Back Button on the Authentication Page */
+#backButton {
+    display: block;
+    margin: 20px auto;
+}
+
 
 /* Ensures no extra styling is inherited from buttons */
 nav button:focus {
@@ -163,19 +184,20 @@ body.home-page footer {
 /* Header Styling */
 body.choose-side-page h1, 
 body.choose-side-page p {
-    font-family: 'Pathway Gothic One', sans-serif;
+    font-family: 'Orbitron', sans-serif; /* Match the font from the homepage */
     text-align: center;
-    color: rgb(255, 255, 255); /* Ensure text is visible against background */
+    color: #FFD700; /* Ensure text is visible against background */
+    text-transform: uppercase; /* Optional to match uppercase style */
 }
 
-/* Container for Side Selection Buttons */
-body.choose-side-page #header div {
-    display: flex;
-    gap: 20px; /* Space between the buttons */
+body.choose-side-page .button-container {
+    display: flex; /* This sets the layout to flexbox */
+    flex-direction: row; /* Ensure buttons are laid out in a row */
     justify-content: center; /* Center the buttons horizontally */
     align-items: center; /* Center the buttons vertically */
     margin-top: 20px; /* Additional space above the buttons */
 }
+
 
 /* Button Styling */
 body.choose-side-page button {
@@ -233,6 +255,27 @@ body.choose-side-page #c3po-text {
     line-height: 1.5;
 }
 
+/* Styling for the Back Button */
+.back-button {
+    position: absolute;
+    top: 20px; /* Place it at the top */
+    left: 20px; /* Place it on the left */
+    padding: 10px 20px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFD700;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.back-button:hover {
+    background-color: #FFD700;
+    color: #000000;
+    box-shadow: 0 0 15px #FFD700, 0 0 20px #FFD700;
+}
 
 /* ==========================================================
    ============== Responsive Design for All Pages ===========
