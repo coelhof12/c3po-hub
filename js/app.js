@@ -124,43 +124,105 @@ export function authentication() {
    =============== Render: Good Side Content ================
    ========================================================== */
 export function goodSide() {
-    document.body.className = 'good-side-page'; // No specific styles for this page
+    document.body.className = 'good-side-page';
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `
         <h1>The Light Side</h1>
         <p>Welcome to the Light Side. Here are the heroes of the Star Wars universe.</p>
+
+        <div id="spinner" class="spinner"></div>
         
         <div class="image-container">
-    <div class="circular-image">
-        <a href="???">
-            <img src="./img/heroes/luke_portrait.png" alt="Luke Skywalker">
-        </a>
-    </div>
-
-    <div class="circular-image">
-        <a href="???">
-            <img src="./img/heroes/hanSolo_portrait.png" alt="Solo">
-        </a>
-    </div>
-
-    <div id="yoda" class="circular-image">
-        <a href="???">
-        <img src="./img/heroes/yoda_portrait.png" alt="Yoda">
-        </a>
-    </div>
-
-    <div id="kenobi" class="circular-image">
-        <a href="???">
-        <img src="./img/heroes/kenobi_portrait.png" alt="Kenobi">
-        </a>
-    </div>
-
-    <div id="leia" class="circular-image">
-        <a href="???">
-        <img src="./img/heroes/leia_portrait.png" alt="Leia">
-        </a>
-    </div>
+            <div class="circular-image" data-name="Luke Skywalker">
+                <img src="./img/heroes/luke_portrait.png" alt="Luke Skywalker">
+            </div>
+            <div class="circular-image" data-name="Han Solo">
+                <img src="./img/heroes/hanSolo_portrait.png" alt="Han Solo">
+            </div>
+            <div class="circular-image" data-name="Yoda">
+                <img src="./img/heroes/yoda_portrait.png" alt="Yoda">
+            </div>
+            <div class="circular-image" data-name="Obi-Wan Kenobi">
+                <img src="./img/heroes/kenobi_portrait.png" alt="Kenobi">
+            </div>
+            <div class="circular-image" data-name="Leia Organa">
+                <img src="./img/heroes/leia_portrait.png" alt="Leia">
+            </div>
+        </div>
+        
+        <!-- Modal to display character info -->
+        <div id="character-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="character-name"></h2>
+                <p id="character-info"></p>
+            </div>
+        </div>
     `;
+    
+    attachCharacterClickEvents();
+}
+
+
+// Add event listeners to character buttons
+function attachCharacterClickEvents() {
+    const images = document.querySelectorAll('.circular-image');
+    const spinner = document.getElementById('spinner');
+
+    images.forEach(image => {
+        image.addEventListener('click', async () => {
+            const characterName = image.getAttribute('data-name');
+
+            // Show the spinner by adding the CSS class
+            spinner.classList.add('show-spinner');
+
+            try {
+                // Fetch the character data
+                const characterData = await fetchCharacterByName(characterName);
+
+                // Hide the spinner once data is fetched
+                spinner.classList.remove('show-spinner');
+
+                // Show the character data in the modal
+                showCharacterModal(characterData);
+
+            } catch (error) {
+                // In case of an error, hide the spinner and handle the error
+                spinner.classList.remove('show-spinner');
+                console.error("Error fetching character data:", error);
+            }
+        });
+    });
+
+    // Close modal on click
+    document.querySelector('.close-button').addEventListener('click', closeModal);
+}
+
+// populate model with data
+
+function showCharacterModal(character) {
+    // Populate modal with character details
+    const modal = document.getElementById('character-modal');
+    const characterName = document.getElementById('character-name');
+    const characterInfo = document.getElementById('character-info');
+
+    characterName.textContent = character.name;
+    characterInfo.innerHTML = `
+        <strong>Height:</strong> ${character.height} cm<br>
+        <strong>Mass:</strong> ${character.mass} kg<br>
+        <strong>Hair Color:</strong> ${character.hair_color}<br>
+        <strong>Skin Color:</strong> ${character.skin_color}<br>
+        <strong>Birth Year:</strong> ${character.birth_year}<br>
+        <strong>Gender:</strong> ${character.gender}
+    `;
+
+    // Display the modal
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    const modal = document.getElementById('character-modal');
+    modal.style.display = 'none';
 }
 
 /* ==========================================================
