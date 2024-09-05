@@ -21,7 +21,7 @@ import { renderPage as renderContentPage } from "./router.js";
     document.body.style.backgroundImage = "url('./img/SWSpace_bg.png')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundAttachment = 'fixed'; // Ensures the image stays in place
+    document.body.style.backgroundAttachment = 'fixed'; 
     
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `
@@ -372,7 +372,7 @@ function closeModal() {
     document.body.style.backgroundImage = "url('./img/SWSpace_bg.png')";
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundAttachment = 'fixed'; // Ensures the image stays in place
+    document.body.style.backgroundAttachment = 'fixed'; 
     
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `

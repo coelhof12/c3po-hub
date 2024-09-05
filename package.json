@@ -1,4 +1,5 @@
 {
+  "_comment": "Configuration file managing dependencies, scripts, and project metadata for SPA development and deployment.",
   "name": "coelhof12.github.io",
   "version": "0.0.1",
   "type": "module",

@@ -11,7 +11,7 @@ body.home-page {
     background: linear-gradient(180deg, #000000 0%, #333333 100%);
     color: #FFD700;
     margin: 0;
-    padding: 10px; /* Corrected padding */
+    padding: 10px; 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -71,7 +71,7 @@ nav button:hover,
 }
 
 #loginButton, #beginButton {
-    width: 200px; /* Set a fixed width for the buttons */
+    width: 200px; 
 }
 
 nav button:focus {
@@ -109,29 +109,29 @@ body.home-page .c3po-feedback {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
     width: 600px; 
-    height: auto; /* Allow height to expand as needed */
+    height: auto; 
     margin: 0 auto;
     font-size: 18px;
     line-height: 2;
     color: #FFD700;
     text-align: left;
     overflow: hidden;
-    animation: fadeInText 4s ease-in-out; /* Apply fade-in effect */
+    animation: fadeInText 4s ease-in-out; 
     margin-top: 50px;
 }
 
 /* Fade-in animation for entire text */
 @keyframes fadeInText {
-    from { opacity: 0; } /* Start with full transparency */
-    to { opacity: 1; } /* End with full opacity */
+    from { opacity: 0; } 
+    to { opacity: 1; } 
 }
 
 /* Optional: Adding a fade-in delay to each line for staggered effect */
 body.home-page .c3po-feedback p span {
     display: inline-block;
     opacity: 0;
-    animation: fadeInText 3s ease-in-out forwards; /* Fade in each span */
-    animation-delay: 1s; /* Delay can be customized */
+    animation: fadeInText 3s ease-in-out forwards; 
+    animation-delay: 1s; 
 }
 
 /* ==========================================================
@@ -141,8 +141,8 @@ body.home-page .c3po-feedback p span {
 /* Back Button Styling */
 .back-button {
     position: absolute;
-    top: 20px; /* Align at the top */
-    left: 20px; /* Align on the left */
+    top: 20px; 
+    left: 20px; 
     padding: 10px 20px;
     border: 2px solid #FFD700;
     border-radius: 5px;
@@ -166,7 +166,7 @@ body.home-page .c3po-feedback p span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
 }
 
 /* Form Input Styling */
@@ -207,10 +207,10 @@ body.home-page .c3po-feedback p span {
 /* Styling for the logo */
 .auth-container img {
     display: block;
-    margin-bottom: 1000px; /* Increase space below the logo */
-    width: 500px; /* Adjust size as needed */
-    height: auto; /* Keep aspect ratio */
-    margin: 0 auto; /* Center the logo */
+    margin-bottom: 1000px; 
+    width: 500px; 
+    height: auto; 
+    margin: 0 auto; 
 }
 
 
@@ -262,7 +262,7 @@ body.choose-side-page button:hover {
 
 /* Style for the C-3PO avatar */
 body.choose-side-page #cp3o-avatar {
-    width: 100px;  /* Standardized avatar size */
+    width: 100px;  
     height: auto;
     border-radius: 50%;
     margin-right: 20px;
@@ -308,7 +308,7 @@ body.page-not-found p {
 /* Custom Button Style for 404 Page */
 body.page-not-found button {
     padding: 10px 20px;
-    background-color: #FF4500; /* Different button color from the rest of the site */
+    background-color: #FF4500; 
     color: #FFF;
     border: 2px solid #FF4500;
     border-radius: 5px;
@@ -335,10 +335,10 @@ body.good-side-page{
 
     body.good-side-page h1, 
 body.good-side-page p {
-    font-family: 'Orbitron', sans-serif; /* Match the font from the homepage */
+    font-family: 'Orbitron', sans-serif; 
     text-align: center;
-    color: #FFD700; /* Ensure text is visible against background */
-    text-transform: uppercase; /* Optional to match uppercase style */
+    color: #FFD700; 
+    text-transform: uppercase; 
 }
 
 body.bad-side-page{
@@ -347,27 +347,27 @@ body.bad-side-page{
 
 body.bad-side-page h1, 
 body.bad-side-page p {
-font-family: 'Orbitron', sans-serif; /* Match the font from the homepage */
+font-family: 'Orbitron', sans-serif; 
 text-align: center;
-color: #FFD700; /* Ensure text is visible against background */
-text-transform: uppercase; /* Optional to match uppercase style */
+color: #FFD700; 
+text-transform: uppercase; 
 }
 
 /* Container to hold the circular images */
 .image-container {
     display: flex;
-    justify-content: center; /* Centers the images horizontally */
-    gap: 20px; /* Controls the spacing between the images */
-    margin-top: 20px; /* Adds space at the top if needed */
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 20px; 
 }
 
    .circular-image {
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Adjust size as needed */
+    width: 150px; 
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    display: inline-block;/* Ensures proper inline layout */
-    transition: border 0.3s ease; /* Smooth transition for the border change */
+    display: inline-block;
+    transition: border 0.3s ease; 
     border: 5px solid transparent;
 }
 
@@ -376,8 +376,8 @@ text-transform: uppercase; /* Optional to match uppercase style */
 .circular-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire div */
-    display: block; /* Removes any gaps below the image */
+    object-fit: cover; 
+    display: block; 
 }
 
 /* Ensures the entire circular area is clickable */
@@ -385,17 +385,17 @@ text-transform: uppercase; /* Optional to match uppercase style */
     display: inline-block;
     width: 100%;
     height: 100%;
-    text-decoration: none; /* Removes any default underline */
+    text-decoration: none; 
     
 }
 
 .circular-image:hover {
-    border: 8px solid yellow; /* Yellow border on hover */
+    border: 8px solid yellow; 
     cursor: pointer;
 }
 
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -428,14 +428,14 @@ text-transform: uppercase; /* Optional to match uppercase style */
 
 /* Spinner animation */
 .spinner {
-    border: 8px solid rgba(255, 255, 255, 0.2); /* Light transparent border */
-    border-top: 8px solid #FFD700; /* Golden color for the top part */
+    border: 8px solid rgba(255, 255, 255, 0.2); 
+    border-top: 8px solid #FFD700; 
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 1s linear infinite; /* Rotates continuously */
+    animation: spin 1s linear infinite; 
     margin: 20px auto;
-    display: none; /* Hidden by default */
+    display: none; 
 }
 
 /* Spinner keyframe animation */
@@ -445,7 +445,7 @@ text-transform: uppercase; /* Optional to match uppercase style */
 }
 
 .show-spinner {
-    display: block; /* Makes the spinner visible */
+    display: block; 
 }
 
 #character-image {
@@ -459,13 +459,13 @@ text-transform: uppercase; /* Optional to match uppercase style */
 
 @media (max-width: 768px) {
     #character-image {
-        width: 280px; /* Smaller width on smaller screens */
+        width: 280px; 
     }
 }
 
 @media (max-width: 480px) {
     #character-image {
-        width: 280px; /* Even smaller width on very small screens */
+        width: 280px;
     }
 }
 
@@ -486,7 +486,7 @@ text-transform: uppercase; /* Optional to match uppercase style */
 
     .c3po-container {
         flex-direction: column;
-        margin-top: 50px; /* Reduced margin for better layout on mobile */
+        margin-top: 50px; 
     }
 
     body.home-page #cp3o-avatar, body.choose-side-page #cp3o-avatar {
