@@ -1,76 +1,82 @@
-# SPA - Final Assignment Project
+# SPA - FINAL ASSIGNMENT PROJECT
 
-### Contributors
+## 🚀 PROJECT OVERVIEW
 
-- [Catarina Pestana](https://github.com/catp98) - @CatP98
-- [David Vilaverde](https://github.com/dtrv95) - @DTRV95
-- [Eduardo Faria](https://github.com/DaDim93) - @DaDim93
-- [Francisco Coelho](https://github.com/coelhof12) - @coelhof12 
-- [Omid Pournejati](https://github.com/theomidious) - @TheOmidious
+A collaborative Single Page Application (SPA) built using HTML, CSS, and JavaScript, integrating dynamic data from the Star Wars API (SWAPI). Inspired by the character C-3PO, this app allows users to explore profiles of Star Wars characters and offers an interactive experience with character data, navigation through the light and dark sides, and seamless page transitions using the History API.
 
-## BRANCH LOGIC
+## 📑 TABLE OF CONTENTS
 
-- main - This is the production-ready branch. It contains the most stable version of the code, and any changes here will trigger the deployment of the website. Only fully tested and reviewed code should be merged into this branch.
-- develop - The integration branch where all feature branches are merged before being pushed to main. This branch is used for final testing and ensures that all features work together smoothly. All development work should be merged into develop before moving to main.
-- develop/documentation - This branch is dedicated to maintaining and updating the project documentation. Use this branch for any changes related to the README.md file or other documentation files. Once documentation changes are complete, they can be merged into develop.
-- develop/ui-design - This branch is focused on the UI/UX design of the project. It’s used for developing and refining the visual elements, including HTML, CSS, and JavaScript related to the user interface. After testing and refinement, merge changes into develop.
-- develop/api-integration - This branch handles the integration of external APIs into the project. Use it for fetching data, managing API requests, and handling responses. Once the API integration is complete and tested, merge it into develop.
+- [Project Overview](#project-overview-)
+- [Technologies Used](#technologies-used-)
+- [Branch Logic](#branch-logic)
+- [Setup Instructions](#setup-instructions-)
+- [Development Workflow](#development-workflow-)
+- [Project Directory Structure](#project-directory-structure-)
+- [License](#license-)
+- [Contributors](#Contributors-)
+- [Contact Us](#contact-us-)
 
-New branches might be created if necessary.
+## 🛠️ TECHNOLOGIES USED
 
-## PROJECT OVERVIEW 🚀
+- **HTML5:** Markup language used for structuring the content.
+- **CSS3:** Stylesheets for page layout and design, with separate CSS files for each page.
+- **JavaScript:** For adding interactivity and dynamic content, organized into page-specific files.
+- **SWAPI:** The Star Wars API, providing data on characters, species, and vehicles.
+- **Webpack:** Bundler for project assets, facilitating an efficient development workflow.
+- **GitHub Pages:** Platform used for deployment, enabling easy access to the live application.
 
-SPA Project | Building a themed single-page application using HTML, CSS, and JavaScript. Featuring dynamic data integration via REST APIs. Collaborative project for learning and mastering full-stack development.
+## 📝 SETUP INSTRUCTIONS
 
-## PROJECT STRUCTURE 🗂️
+Clone the repository:
+
+- **HTTPS:** `git clone https://github.com/coelhof12/coelhof12.github.io.git`
+- **SSH:** `git clone git@github.com:coelhof12/coelhof12.github.io.git`
+
+## 🔄 DEVELOPMENT WORKFLOW 🔄
+
+- **HTML:** Define the structure and layout of the SPA.
+- **CSS:** Style the elements and ensure the design is responsive.
+- **JavaScript:** Implement interactivity, API consumption (SWAPI), and dynamic page rendering via the History API.
+- **Testing & Deployment:** Regularly tested features as they were implemented in a testing/merging branch.
+
+## 📂 PROJECT DIRECTORY STRUCTURE
 
 ```
-/ (Root Directory)
-│
-├── index.html          # Main HTML file, located in the root directory
-│
-├── css/                # Directory for CSS files
-│   └── style.css       # Main stylesheet
-│
-├── js/                 # Directory for JavaScript files
-│   └── script.js       # Main JavaScript file
-│
-├── img/                # Directory for images (if needed)
-│   └── example.png     # Example image file
-│
-├── assets/             # Directory for other assets (e.g., fonts, media)
-│   └── fonts/          # Subdirectory for fonts (if needed)
-│
-├── README.md           # Project documentation
-│
-├── .gitignore          # Git ignore file to exclude unnecessary files from version control
-│
-└── LICENSE             # License file (optional)
+coelhof12.github.io
+├── css/
+│   └── style.css
+├── img/
+│   ├── <various images>
+│   ├── heroes/
+│   │   └── <images of heroes like Luke Skywalker, Yoda, etc.>
+│   └── villains/
+│       └── <images of villains like Darth Vader, Palpatine, etc.>
+├── js/
+│   ├── app.js
+│   ├── router.js
+│   └── <page-specific JS modules>
+├── services/
+│   ├── charactersAffiliation.json
+│   └── swapiService.js
+├── 404.html
+├── index.html
+├── LICENSE
+├── package.json
+└── README.md
 ```
 
-## TECHNOLOGIES USED 🛠️
-
-- HTML5: Markup language used for structuring the content.
-- CSS3: Stylesheets for page layout and design, with separate CSS files for each page.
-- JavaScript: For adding interactivity and dynamic content, organized into page-specific files.
-
-## SETUP INSTRUCTIONS 📝
-
-Copy Code:
-
-- HTTPS: '''git clone git@github.com:coelhof12/website-certoma.git'''
-- SSH: '''git clone git@github.com:coelhof12/website-certoma.git'''
-
-## DEVELOPMENT WORKFLOW 🔄
-
-- HTML: Develop the structure and layout;
-- CSS: Apply styling and ensure responsive design;
-- JavaScript: Add interactivity and API integration.
-
-## LICENSE 📜
+## 📜 LICENSE
 
 This project is open-source and available under the MIT License.
 
-## CONTACT US 📬
+## 👥 CONTRIBUTORS
+
+- [Catarina Pestana](https://github.com/catp98)
+- [David Vilaverde](https://github.com/dtrv95)
+- [Eduardo Faria](https://github.com/DaDim93)
+- [Francisco Coelho](https://github.com/coelhof12)
+- [Omid Pournejati](https://github.com/theomidious)
+
+## 📬 CONTACT US
 
 For any questions or suggestions, feel free to reach out with the developers in the top of this document.
