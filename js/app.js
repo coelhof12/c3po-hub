@@ -338,7 +338,7 @@ function showCharacterModal(character) {
     `;
 
     // Set the character image src based on character name
-    const imageFileName = character.name.toLowerCase().replace(' ', '_') + '_info.png'; // Converts "Luke Skywalker" -> "luke_skywalker_info.png"
+    const imageFileName = character.name.toLowerCase().replace(/ /g, '_') + '_info.png'; // Converts "Luke Skywalker" -> "luke_skywalker_info.png"
     characterImage.src = `./img/villains/${imageFileName}`;
 
     // Display the modal
