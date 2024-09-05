@@ -274,7 +274,7 @@ body.choose-side-page #cp3o-avatar {
    ========================================================== */
    body.page-not-found {
     font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(180deg, #000000 0%, #333333 100%);
+    background: url('/img/SWSpace_bg.png');
     color: #FFD700;
     text-align: center;
     padding-top: 10px;
