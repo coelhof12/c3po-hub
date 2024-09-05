@@ -78,7 +78,26 @@ export function authentication() {
         renderPage('/');
     });
     // Add form submission handler here <----------------------------------------------------------------
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const validUsername = 'user';  // Example username
+        const validPassword = 'pass';  // Example password
+
+        // Simple validation
+        if (username === validUsername && password === validPassword) {
+            alert('Login successful!');
+            window.history.pushState({}, '', '/choose-side');
+            renderPage('/choose-side');
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    });
 }
+
 
 /* ==========================================================
    ============== Render: Choose Side Content ===============
