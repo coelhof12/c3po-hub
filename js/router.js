@@ -15,6 +15,8 @@ export function renderPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const currentPath = urlParams.get('path') || window.location.pathname;
 
+    console.log('Current path:', currentPath); // for debugging
+
     // Find the correct route given the path
     const route = routes.find(r => r.path === currentPath);
 
