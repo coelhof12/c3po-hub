@@ -164,7 +164,8 @@ export function goodSide() {
 }
 
 
-// Add event listeners to character buttons
+
+// Attach event listeners to the character images
 function attachCharacterClickEvents() {
     const images = document.querySelectorAll('.circular-image');
     const spinner = document.getElementById('spinner');
@@ -198,10 +199,8 @@ function attachCharacterClickEvents() {
     document.querySelector('.close-button').addEventListener('click', closeModal);
 }
 
-// populate model with data
-
+// Show character data in the modal
 function showCharacterModal(character) {
-    // Populate modal with character details
     const modal = document.getElementById('character-modal');
     const characterName = document.getElementById('character-name');
     const characterInfo = document.getElementById('character-info');
@@ -220,21 +219,54 @@ function showCharacterModal(character) {
     modal.style.display = 'block';
 }
 
+// Close modal
 function closeModal() {
     const modal = document.getElementById('character-modal');
     modal.style.display = 'none';
 }
 
+
 /* ==========================================================
-   =============== Render: Bad Side Content =================
+   =============== Render: Bad Side Content ================
    ========================================================== */
-export function badSide() {
-    document.body.className = ''; // No specific styles for this page
+   export function badSide() {
+    document.body.className = 'bad-side-page';
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `
         <h1>The Dark Side</h1>
         <p>Welcome to the Dark Side. Here are the villains of the Star Wars universe.</p>
+
+        <div id="spinner" class="spinner"></div>
+        
+        <div class="image-container">
+            <div class="circular-image" data-name="Darth Vader">
+                <img src="./img/villains/vader_portrait.png" alt="Darth Vader">
+            </div>
+            <div class="circular-image" data-name="Palpatine">
+                <img src="./img/villains/sidious_portrait.png" alt="Darth Sidious">
+            </div>
+            <div class="circular-image" data-name="Darth Maul">
+                <img src="./img/villains/maul_portrait.png" alt="Darth Maul">
+            </div>
+            <div class="circular-image" data-name="Dooku">
+                <img src="./img/villains/dooku_portrait.png" alt="Count Dooku">
+            </div>
+            <div class="circular-image" data-name="Darth Maul">
+                <img src="./img/villains/kylo_portrait.png" alt="Kylo Ren">
+            </div>
+        </div>
+        
+        <!-- Modal to display character info -->
+        <div id="character-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="character-name"></h2>
+                <p id="character-info"></p>
+            </div>
+        </div>
     `;
+    
+    attachCharacterClickEvents();
 }
 
 /* ==========================================================
