@@ -320,6 +320,18 @@ body.good-side-page p {
     text-transform: uppercase; /* Optional to match uppercase style */
 }
 
+body.bad-side-page{
+    background: url('/img/SWSpace_bg.png') center/cover no-repeat fixed;
+}
+
+body.bad-side-page h1, 
+body.bad-side-page p {
+font-family: 'Orbitron', sans-serif; /* Match the font from the homepage */
+text-align: center;
+color: #FFD700; /* Ensure text is visible against background */
+text-transform: uppercase; /* Optional to match uppercase style */
+}
+
 /* Container to hold the circular images */
 .image-container {
     display: flex;
@@ -333,7 +345,9 @@ body.good-side-page p {
     height: 150px; /* Adjust size as needed */
     border-radius: 50%;
     overflow: hidden;
-    display: inline-block; /* Ensures proper inline layout */
+    display: inline-block;/* Ensures proper inline layout */
+    transition: border 0.3s ease; /* Smooth transition for the border change */
+    border: 5px solid transparent;
 }
 
 
@@ -351,6 +365,11 @@ body.good-side-page p {
     width: 100%;
     height: 100%;
     text-decoration: none; /* Removes any default underline */
+    
+}
+
+.circular-image:hover {
+    border: 8px solid yellow; /* Yellow border on hover */
     cursor: pointer;
 }
 
@@ -375,6 +394,7 @@ body.good-side-page p {
     border-radius: 10px;
     width: 80%;
     max-width: 600px;
+    text-align: center;
 }
 
 .close-button {
@@ -405,6 +425,27 @@ body.good-side-page p {
 
 .show-spinner {
     display: block; /* Makes the spinner visible */
+}
+
+#character-image {
+    width: 420px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 5px;
+    align-content: center;
+}
+
+@media (max-width: 768px) {
+    #character-image {
+        width: 280px; /* Smaller width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #character-image {
+        width: 280px; /* Even smaller width on very small screens */
+    }
 }
 
 
