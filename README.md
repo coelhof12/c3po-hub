@@ -1,10 +1,8 @@
 # SPA - FINAL ASSIGNMENT PROJECT
 
+## 🚀 PROJECT OVERVIEW
 
-## 🚀 PROJECT OVERVIEW 
-
-SPA Project | Building a themed single-page application using HTML, CSS, and JavaScript. Featuring dynamic data integration via REST APIs. Collaborative project for learning and mastering full-stack development.
-
+A collaborative Single Page Application (SPA) built using HTML, CSS, and JavaScript, integrating dynamic data from the Star Wars API (SWAPI). Inspired by the character C-3PO, this app allows users to explore profiles of Star Wars characters and offers an interactive experience with character data, navigation through the light and dark sides, and seamless page transitions using the History API.
 
 ## 📑 TABLE OF CONTENTS
 
@@ -18,73 +16,60 @@ SPA Project | Building a themed single-page application using HTML, CSS, and Jav
 - [Contributors](#Contributors-)
 - [Contact Us](#contact-us-)
 
-
-## 🌳 BRANCH LOGIC 
-
-- **main** - Production-ready branch. Deployments to the live environment are triggered from here. Ensure all changes are fully tested before merging. Merge when the project is ready;
-- **develop** - The integration branch where all feature branches converge. Use this branch to test features together.
-- **dev.documentation** - Update project documentation. For changes to `README.md` and other documentation files.
-- **dev.ui-design** - Work on UI/UX elements. Use for changes to HTML, CSS, and JS related to the user interface.
-
-New branches might be created if necessary. Whenever you are working on a new feature, create a new branch sourcing from **develop**.
-
-
-## 🛠️ TECHNOLOGIES USED 
+## 🛠️ TECHNOLOGIES USED
 
 - **HTML5:** Markup language used for structuring the content.
 - **CSS3:** Stylesheets for page layout and design, with separate CSS files for each page.
 - **JavaScript:** For adding interactivity and dynamic content, organized into page-specific files.
-
+- **SWAPI:** The Star Wars API, providing data on characters, species, and vehicles.
+- **Webpack:** Bundler for project assets, facilitating an efficient development workflow.
+- **GitHub Pages:** Platform used for deployment, enabling easy access to the live application.
 
 ## 📝 SETUP INSTRUCTIONS
 
-Copy Code:
+Clone the repository:
 
 - **HTTPS:** `git clone https://github.com/coelhof12/coelhof12.github.io.git`
 - **SSH:** `git clone git@github.com:coelhof12/coelhof12.github.io.git`
 
-
 ## 🔄 DEVELOPMENT WORKFLOW 🔄
 
-- **HTML**: Develop the structure and layout.
-- **CSS**: Apply styling and ensure responsive design.
-- **JavaScript**: Add interactivity and API integration.
-
+- **HTML:** Define the structure and layout of the SPA.
+- **CSS:** Style the elements and ensure the design is responsive.
+- **JavaScript:** Implement interactivity, API consumption (SWAPI), and dynamic page rendering via the History API.
+- **Testing & Deployment:** Regularly tested features as they were implemented in a testing/merging branch.
 
 ## 📂 PROJECT DIRECTORY STRUCTURE
 
 ```
 coelhof12.github.io
-├── .vscode/
-│   └── settings.json
 ├── css/
 │   └── style.css
 ├── img/
-│   └── .gitkeep
+│   ├── <various images>
+│   ├── heroes/
+│   │   └── <images of heroes like Luke Skywalker, Yoda, etc.>
+│   └── villains/
+│       └── <images of villains like Darth Vader, Palpatine, etc.>
 ├── js/
-│   ├── pages/
-│   │   ├── homePage.js
-│   │   └── profilePage.js
+│   ├── app.js
 │   ├── router.js
-│   └── script.js
+│   └── <page-specific JS modules>
 ├── services/
 │   ├── charactersAffiliation.json
 │   └── swapiService.js
-├── .gitattributes
-├── .gitignore
+├── 404.html
 ├── index.html
 ├── LICENSE
 ├── package.json
 └── README.md
 ```
 
-
-## 📜 LICENSE 
+## 📜 LICENSE
 
 This project is open-source and available under the MIT License.
 
-
-## 👥  CONTRIBUTORS
+## 👥 CONTRIBUTORS
 
 - [Catarina Pestana](https://github.com/catp98)
 - [David Vilaverde](https://github.com/dtrv95)
@@ -92,7 +77,6 @@ This project is open-source and available under the MIT License.
 - [Francisco Coelho](https://github.com/coelhof12)
 - [Omid Pournejati](https://github.com/theomidious)
 
-
-## 📬 CONTACT US 
+## 📬 CONTACT US
 
 For any questions or suggestions, feel free to reach out with the developers in the top of this document.
