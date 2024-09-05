@@ -87,7 +87,7 @@ export function authentication() {
         const validUsername = 'user';  // Example username
         const validPassword = 'pass';  // Example password
 
-        // Simple validation
+        // Temporary auth = keys : user/pass
         if (username === validUsername && password === validPassword) {
             alert('Login successful!');
             window.history.pushState({}, '', '/choose-side');
