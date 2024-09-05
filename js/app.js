@@ -41,16 +41,24 @@ import { renderPage as renderContentPage } from "./router.js";
         </div>
     `;
 
+
+    // Add event listeners to buttons
+    buttonEventListenerAndRender('loginButton', '/authentication');
+    buttonEventListenerAndRender('beginButton', '/choose-side');
+
+    /*
     // Add event listeners to buttons
     document.getElementById('loginButton').addEventListener('click', function() {
         window.history.pushState({}, '', '/authentication');
         renderPage('/authentication');
     });
+    
 
     document.getElementById('beginButton').addEventListener('click', function() {
         window.history.pushState({}, '', '/choose-side');
         renderPage('/choose-side');
     });
+    */
 }
 
 /* ==========================================================
@@ -73,12 +81,17 @@ import { renderPage as renderContentPage } from "./router.js";
         </div>
     `;
 
+    
+    buttonEventListenerAndRender('backButton', '/');
+    /*
     // Back button event listener
     document.getElementById('backButton').addEventListener('click', function() {
         window.history.pushState({}, '', '/');
         renderPage('/');
+       
     });
-
+     */
+    /*
     // Form submission handler for Log In
     document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -87,6 +100,25 @@ import { renderPage as renderContentPage } from "./router.js";
 
         console.log(`Username: ${username}, Password: ${password}`);
         
+    });
+    */
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const validUsername = 'user';  // Example username
+        const validPassword = 'pass';  // Example password
+
+        // Temporary auth = keys : user/pass
+        if (username === validUsername && password === validPassword) {
+            alert('Login successful!');
+            window.history.pushState({}, '', '/choose-side');
+            renderPage('/choose-side');
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
     });
     
 }
@@ -112,6 +144,12 @@ import { renderPage as renderContentPage } from "./router.js";
     `;
 
     // Add event listeners to buttons
+    buttonEventListenerAndRender('goodSideButton', '/good-side');
+    buttonEventListenerAndRender('badSideButton', '/bad-side');
+    buttonEventListenerAndRender('backButton', '/');
+
+    /*
+    // Add event listeners to buttons
     document.getElementById('goodSideButton').addEventListener('click', function() {
         console.log('Good Side Button Clicked');
         window.history.pushState({}, '', '/good-side');
@@ -129,6 +167,7 @@ import { renderPage as renderContentPage } from "./router.js";
         window.history.pushState({}, '', '/');
         renderPage('/');
     });
+    */
 }
 
 /* ==========================================================
@@ -171,7 +210,9 @@ export function goodSide() {
         </div>
     `;
     
+    buttonEventListenerAndRender('backButton', '/choose-side');
     attachCharacterClickEvents();
+    
 }
 
 
@@ -278,6 +319,7 @@ function closeModal() {
     `;
     
     attachCharacterClickEvents();
+    buttonEventListenerAndRender('backButton', '/choose-side');
 }
 
 /* ==========================================================
@@ -368,3 +410,15 @@ window.addEventListener('popstate', () => {
    ================== Handle Initial Load ===================
    ========================================================== */
 renderPage(document.location.pathname);
+
+
+/* ==========================================================
+   ============== Create button and Add eventListener========
+   ========================================================== */
+
+function buttonEventListenerAndRender(buttonName, renderRoute) {
+    document.getElementById(buttonName).addEventListener('click', function() {
+        window.history.pushState({}, '', renderRoute);
+        renderPage(renderRoute);
+    });
+}
