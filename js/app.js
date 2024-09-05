@@ -82,13 +82,22 @@ import { renderPage as renderContentPage } from "./router.js";
     // Form submission handler for Log In
     document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();
+
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-
-        console.log(`Username: ${username}, Password: ${password}`);
         
+        const validUsername = 'user';  // Example username
+        const validPassword = 'pass';  // Example password
+
+        // Temporary auth logic
+        if (username === validUsername && password === validPassword) {
+            alert('Login successful!');
+            window.history.pushState({}, '', '/choose-side');
+            renderPage('/choose-side');
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
     });
-    
 }
 
 /* ==========================================================
