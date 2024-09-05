@@ -135,6 +135,86 @@ body.home-page .c3po-feedback p span {
 }
 
 /* ==========================================================
+   =============== Authentication Page ======================
+   ========================================================== */
+
+/* Back Button Styling */
+.back-button {
+    position: absolute;
+    top: 20px; /* Align at the top */
+    left: 20px; /* Align on the left */
+    padding: 10px 20px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFD700;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.back-button:hover {
+    background-color: #FFD700;
+    color: #000000;
+    box-shadow: 0 0 15px #FFD700, 0 0 20px #FFD700;
+}
+
+/* Center the form on the page */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Form Input Styling */
+.auth-container input {
+    display: block;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-top: 40px;
+    width: 300px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFD700;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Log In Button */
+.auth-container button#loginButton {
+    width: 325px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFD700;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.auth-container button#loginButton:hover {
+    background-color: #FFD700;
+    color: #000000;
+    box-shadow: 0 0 15px #FFD700, 0 0 20px #FFD700;
+}
+
+/* Styling for the logo */
+.auth-container img {
+    display: block;
+    margin-bottom: 1000px; /* Increase space below the logo */
+    width: 500px; /* Adjust size as needed */
+    height: auto; /* Keep aspect ratio */
+    margin: 0 auto; /* Center the logo */
+}
+
+
+/* ==========================================================
    =============== Choose Side Page Styles ==================
    ========================================================== */
 

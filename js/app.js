@@ -57,27 +57,38 @@ import { renderPage as renderContentPage } from "./router.js";
    ============ Render: Authentication Content ==============
    ========================================================== */
    
-export function authentication() {
-    document.body.className = ''; // No specific styles for this page
+   export function authentication() {
+    document.body.className = ''; // Reset any specific styles
     const container = document.querySelector('#page-wrap');
     container.innerHTML = `
-             <h1>Authentication Page</h1>
-        <p>Please log in to continue.</p>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
-            <button type="submit">Login</button>
-        </form>
-        <button id="backButton">Back</button> <!-- Added Back button -->
+        <button class="back-button" id="backButton">Back</button> <!-- Back button added -->
+        <div class="auth-container">
+        <!-- Star Wars Logo -->
+            <img src="./img/starwarslogo.png" alt="Star Wars Logo">
+            <form id="loginForm">
+                <input type="text" id="username" name="username" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <button type="submit" id="loginButton">Log In</button>
+            </form>
+        </div>
     `;
-    // Add event listeners to buttons
+
+    // Back button event listener
     document.getElementById('backButton').addEventListener('click', function() {
         window.history.pushState({}, '', '/');
         renderPage('/');
     });
-    // Add form submission handler here <----------------------------------------------------------------
+
+    // Form submission handler for Log In
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        console.log(`Username: ${username}, Password: ${password}`);
+        
+    });
+    
 }
 
 /* ==========================================================
