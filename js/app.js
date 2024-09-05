@@ -166,6 +166,7 @@ export function goodSide() {
             <div class="modal-content">
                 <span class="close-button">&times;</span>
                 <h2 id="character-name"></h2>
+                <img id="character-image" alt="Character Image">
                 <p id="character-info"></p>
             </div>
         </div>
@@ -215,7 +216,8 @@ function showCharacterModal(character) {
     const modal = document.getElementById('character-modal');
     const characterName = document.getElementById('character-name');
     const characterInfo = document.getElementById('character-info');
-
+    const characterImage = document.getElementById('character-image');
+    
     characterName.textContent = character.name;
     characterInfo.innerHTML = `
         <strong>Height:</strong> ${character.height} cm<br>
@@ -225,6 +227,10 @@ function showCharacterModal(character) {
         <strong>Birth Year:</strong> ${character.birth_year}<br>
         <strong>Gender:</strong> ${character.gender}
     `;
+
+    // Set the character image src based on character name
+    const imageFileName = character.name.toLowerCase().replace(' ', '_') + '_info.png'; // Converts "Luke Skywalker" -> "luke_skywalker_info.png"
+    characterImage.src = `./img/heroes/${imageFileName}`;
 
     // Display the modal
     modal.style.display = 'block';
@@ -262,8 +268,8 @@ function closeModal() {
             <div class="circular-image" data-name="Dooku">
                 <img src="./img/villains/dooku_portrait.png" alt="Count Dooku">
             </div>
-            <div class="circular-image" data-name="Darth Maul">
-                <img src="./img/villains/kylo_portrait.png" alt="Kylo Ren">
+            <div class="circular-image" data-name="Jabba Desilijic Tiure">
+                <img src="./img/villains/jabba_portrait.png" alt="Jabba">
             </div>
         </div>
         
@@ -272,12 +278,78 @@ function closeModal() {
             <div class="modal-content">
                 <span class="close-button">&times;</span>
                 <h2 id="character-name"></h2>
+                <img id="character-image" alt="Character Image">
                 <p id="character-info"></p>
             </div>
         </div>
     `;
     
     attachCharacterClickEvents();
+
+// Attach event listeners to the character images
+function attachCharacterClickEvents() {
+    const images = document.querySelectorAll('.circular-image');
+    const spinner = document.getElementById('spinner');
+
+    images.forEach(image => {
+        image.addEventListener('click', async () => {
+            const characterName = image.getAttribute('data-name');
+
+            // Show the spinner by adding the CSS class
+            spinner.classList.add('show-spinner');
+
+            try {
+                // Fetch the character data
+                const characterData = await fetchCharacterByName(characterName);
+
+                // Hide the spinner once data is fetched
+                spinner.classList.remove('show-spinner');
+
+                // Show the character data in the modal
+                showCharacterModal(characterData);
+
+            } catch (error) {
+                // In case of an error, hide the spinner and handle the error
+                spinner.classList.remove('show-spinner');
+                console.error("Error fetching character data:", error);
+            }
+        });
+    });
+
+    // Close modal on click
+    document.querySelector('.close-button').addEventListener('click', closeModal);
+}
+
+// Show character data in the modal
+function showCharacterModal(character) {
+    const modal = document.getElementById('character-modal');
+    const characterName = document.getElementById('character-name');
+    const characterInfo = document.getElementById('character-info');
+    const characterImage = document.getElementById('character-image');
+    
+    characterName.textContent = character.name;
+    characterInfo.innerHTML = `
+        <strong>Height:</strong> ${character.height} cm<br>
+        <strong>Mass:</strong> ${character.mass} kg<br>
+        <strong>Hair Color:</strong> ${character.hair_color}<br>
+        <strong>Skin Color:</strong> ${character.skin_color}<br>
+        <strong>Birth Year:</strong> ${character.birth_year}<br>
+        <strong>Gender:</strong> ${character.gender}
+    `;
+
+    // Set the character image src based on character name
+    const imageFileName = character.name.toLowerCase().replace(/ /g, '_') + '_info.png'; // Converts "Luke Skywalker" -> "luke_skywalker_info.png"
+    characterImage.src = `./img/villains/${imageFileName}`;
+
+    // Display the modal
+    modal.style.display = 'block';
+}
+
+// Close modal
+function closeModal() {
+    const modal = document.getElementById('character-modal');
+    modal.style.display = 'none';
+}
 }
 
 /* ==========================================================
