@@ -1,0 +1,202 @@
+[
+  {
+      "name": "Luke Skywalker",
+      "side": "light"
+  },
+  {
+      "name": "Leia Organa",
+      "side": "light"
+  },
+  {
+      "name": "Yoda",
+      "side": "light"
+  },
+  {
+      "name": "Obi-Wan Kenobi",
+      "side": "light"
+  },
+  {
+      "name": "Rey",
+      "side": "light"
+  },
+  {
+      "name": "Anakin Skywalker (pre-fall)",
+      "side": "light"
+  },
+  {
+      "name": "Ahsoka Tano",
+      "side": "light"
+  },
+  {
+      "name": "Qui-Gon Jinn",
+      "side": "light"
+  },
+  {
+      "name": "Mace Windu",
+      "side": "light"
+  },
+  {
+      "name": "Padmé Amidala",
+      "side": "light"
+  },
+  {
+      "name": "Finn",
+      "side": "light"
+  },
+  {
+      "name": "Poe Dameron",
+      "side": "light"
+  },
+  {
+      "name": "Han Solo",
+      "side": "light"
+  },
+  {
+      "name": "Chewbacca",
+      "side": "light"
+  },
+  {
+      "name": "R2-D2",
+      "side": "light"
+  },
+  {
+      "name": "C-3PO",
+      "side": "light"
+  },
+  {
+      "name": "Kanan Jarrus",
+      "side": "light"
+  },
+  {
+      "name": "Ezra Bridger",
+      "side": "light"
+  },
+  {
+      "name": "Luminara Unduli",
+      "side": "light"
+  },
+  {
+      "name": "Shaak Ti",
+      "side": "light"
+  },
+  {
+      "name": "Kit Fisto",
+      "side": "light"
+  },
+  {
+      "name": "Plo Koon",
+      "side": "light"
+  },
+  {
+      "name": "Bail Organa",
+      "side": "light"
+  },
+  {
+      "name": "Mon Mothma",
+      "side": "light"
+  },
+  {
+      "name": "Admiral Ackbar",
+      "side": "light"
+  },
+  {
+      "name": "Darth Vader (Anakin Skywalker post-fall)",
+      "side": "dark"
+  },
+  {
+      "name": "Emperor Palpatine (Darth Sidious)",
+      "side": "dark"
+  },
+  {
+      "name": "Kylo Ren (Ben Solo)",
+      "side": "dark"
+  },
+  {
+      "name": "Count Dooku (Darth Tyranus)",
+      "side": "dark"
+  },
+  {
+      "name": "Darth Maul",
+      "side": "dark"
+  },
+  {
+      "name": "General Grievous",
+      "side": "dark"
+  },
+  {
+      "name": "Snoke",
+      "side": "dark"
+  },
+  {
+      "name": "Asajj Ventress",
+      "side": "dark"
+  },
+  {
+      "name": "Grand Moff Tarkin",
+      "side": "dark"
+  },
+  {
+      "name": "Darth Bane",
+      "side": "dark"
+  },
+  {
+      "name": "Darth Plagueis",
+      "side": "dark"
+  },
+  {
+      "name": "Savage Opress",
+      "side": "dark"
+  },
+  {
+      "name": "Inquisitors (Fifth Brother, Seventh Sister)",
+      "side": "dark"
+  },
+  {
+      "name": "Jabba the Hutt",
+      "side": "dark"
+  },
+  {
+      "name": "Boba Fett",
+      "side": "dark"
+  },
+  {
+      "name": "Captain Phasma",
+      "side": "dark"
+  },
+  {
+      "name": "Nute Gunray",
+      "side": "dark"
+  },
+  {
+      "name": "Wat Tambor",
+      "side": "dark"
+  },
+  {
+      "name": "Ponda Baba",
+      "side": "dark"
+  },
+  {
+      "name": "Bib Fortuna",
+      "side": "dark"
+  },
+  {
+      "name": "Orson Krennic",
+      "side": "dark"
+  },
+  {
+      "name": "Darth Nihilus",
+      "side": "dark"
+  },
+  {
+      "name": "Darth Revan (Dark Side phase)",
+      "side": "dark"
+  },
+  {
+      "name": "Darth Malak",
+      "side": "dark"
+  },
+  {
+      "name": "Grand Admiral Thrawn",
+      "side": "dark"
+  }
+]

@@ -1,81 +1,372 @@
-/*------------------------------------*\
-            #COMING SOON PAGE
-\*------------------------------------*/
+/* Import the Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1e1e1e;
-    color: #c9d1d9;
-    font-family: 'Fira Code', monospace;
+/* ==========================================================
+   ================== Home Page Styles ======================
+   ========================================================== */
+
+body.home-page {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(180deg, #000000 0%, #333333 100%);
+    color: #FFD700;
     margin: 0;
+    padding: 10px; /* Corrected padding */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+body.home-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Consolidated button styles */
+nav button, 
+#loginButton, 
+#beginButton, 
+#backButton, 
+.back-button {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
     text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-.coming-soon {
-    text-align: center;
-    animation: fadeIn 2s ease-in-out;
+/* Hover Effect */
+nav button:hover, 
+#loginButton:hover, 
+#beginButton:hover, 
+#backButton:hover, 
+.back-button:hover {
+    background-color: #FFD700;
+    color: #000000;
+    box-shadow: 0 0 15px #FFD700, 0 0 20px #FFD700;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-#countdown {
+.button-container {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 2rem;
+    flex-direction: column;
+    align-items: center; 
     margin-top: 20px;
 }
 
-#countdown div {
+#loginButton, #beginButton {
+    width: 200px; /* Set a fixed width for the buttons */
+}
+
+nav button:focus {
+    outline: none;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background: linear-gradient(180deg, #111111, #333333);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* Main Content */
+body.home-page #page-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 0px; 
+    margin-top: 60px;
+    color: #FFD700;
+    position: relative;
+    z-index: 10;
+}
+
+/* C-3PO Feedback Box */
+body.home-page .c3po-feedback {
+    display: inline-block;
+    padding: 30px;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+    width: 600px; 
+    height: auto; /* Allow height to expand as needed */
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 2;
+    color: #FFD700;
+    text-align: left;
+    overflow: hidden;
+    animation: fadeInText 4s ease-in-out; /* Apply fade-in effect */
+    margin-top: 50px;
+}
+
+/* Fade-in animation for entire text */
+@keyframes fadeInText {
+    from { opacity: 0; } /* Start with full transparency */
+    to { opacity: 1; } /* End with full opacity */
+}
+
+/* Optional: Adding a fade-in delay to each line for staggered effect */
+body.home-page .c3po-feedback p span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInText 3s ease-in-out forwards; /* Fade in each span */
+    animation-delay: 1s; /* Delay can be customized */
+}
+
+/* ==========================================================
+   =============== Choose Side Page Styles ==================
+   ========================================================== */
+
+body.choose-side-page {
+    background: url('/img/SWSpace_bg.png') center/cover no-repeat fixed;
+    color: #FFD700;
+}
+
+body.choose-side-page h1, 
+body.choose-side-page p {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: #FFD700;
+    text-transform: uppercase;
+}
+
+body.choose-side-page .button-container {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+body.choose-side-page button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFD700;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+body.choose-side-page button:hover {
+    background-color: #FFD700;
+    color: #000000;
+    box-shadow: 0 0 15px #FFD700, 0 0 20px #FFD700;
+}
+
+/* Style for the C-3PO avatar */
+body.choose-side-page #cp3o-avatar {
+    width: 100px;  /* Standardized avatar size */
+    height: auto;
+    border-radius: 50%;
+    margin-right: 20px;
+    display: block;
+}
+
+/* ==========================================================
+   =============== 404 Page Not Found Styles ================
+   ========================================================== */
+body.page-not-found {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(180deg, #000000 0%, #333333 100%);
+    color: #FFD700;
+    text-align: center;
+    padding-top: 10px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    align-items: center;
 }
 
-#countdown span {
-    font-size: 3rem;
-    font-weight: bold;
+.not-found-container {
+    text-align: center;
 }
 
-.developers {
-    margin-top: 30px;
-    font-size: larger;
+.not-found-image {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-.github-buttons {
+body.page-not-found h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+body.page-not-found p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================
+   ============= Good & Bad Side Page Styles ================
+   ========================================================== */
+body.good-side-page{
+        background: url('/img/SWSpace_bg.png') center/cover no-repeat fixed;
+}
+
+    body.good-side-page h1, 
+body.good-side-page p {
+    font-family: 'Orbitron', sans-serif; /* Match the font from the homepage */
+    text-align: center;
+    color: #FFD700; /* Ensure text is visible against background */
+    text-transform: uppercase; /* Optional to match uppercase style */
+}
+
+/* Container to hold the circular images */
+.image-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Centers the images horizontally */
+    gap: 20px; /* Controls the spacing between the images */
+    margin-top: 20px; /* Adds space at the top if needed */
 }
 
-.github-button {
-    color: #58a6ff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    margin: 5px 0;
+   .circular-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block; /* Ensures proper inline layout */
+}
+
+
+
+.circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire div */
+    display: block; /* Removes any gaps below the image */
+}
+
+/* Ensures the entire circular area is clickable */
+.circular-image a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Removes any default underline */
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
     background-color: #333;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 220px;
-    height: 40px;
+    color: #FFD700;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
 }
 
-.github-button:hover {
-    background-color: #444;
-    transform: translateY(-5px);
+.close-button {
+    color: #FFD700;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.github-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+/* Spinner animation */
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.2); /* Light transparent border */
+    border-top: 8px solid #FFD700; /* Golden color for the top part */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Rotates continuously */
+    margin: 20px auto;
+    display: none; /* Hidden by default */
 }
 
+/* Spinner keyframe animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.show-spinner {
+    display: block; /* Makes the spinner visible */
+}
+
+
+/* ==========================================================
+   ============== Responsive Design for All Pages ===========
+   ========================================================== */
+
+@media (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .c3po-container {
+        flex-direction: column;
+        margin-top: 50px; /* Reduced margin for better layout on mobile */
+    }
+
+    body.home-page #cp3o-avatar, body.choose-side-page #cp3o-avatar {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        width: 80%;
+        padding: 15px 25px;
+    }
+}
+
+/* ==========================================================
+   =================== Animations ===========================
+   ========================================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
