@@ -11,19 +11,20 @@ const routes = [
 
 // Function to find route and render a page
 export function renderPage() {
-    // Get the path from the query parameter (for redirects) or fallback to window.location.pathname
+    // Get the path from the query parameter or fallback to window.location.pathname
     const urlParams = new URLSearchParams(window.location.search);
     const currentPath = urlParams.get('path') || window.location.pathname;
 
-    console.log('Current path:', currentPath); // for debugging
+    console.log('Current path:', currentPath); // Ensure the correct path is logged
 
-    // Find the correct route given the path
+    // Check if the path exists in the routes
     const route = routes.find(r => r.path === currentPath);
 
     if (route) {
-        route.page(); // Render the matched route
+        route.page(); // Render the page if a matching route is found
     } else {
-        pageNotFound(); // Render 404 if page is not found
+        console.log('Path not found, rendering 404 page'); // Add a log for debugging
+        pageNotFound(); // Render 404 page if no route matches
     }
 }
 
