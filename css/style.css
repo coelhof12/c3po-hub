@@ -272,7 +272,7 @@ body.choose-side-page #cp3o-avatar {
 /* ==========================================================
    =============== 404 Page Not Found Styles ================
    ========================================================== */
-body.page-not-found {
+   body.page-not-found {
     font-family: 'Orbitron', sans-serif;
     background: linear-gradient(180deg, #000000 0%, #333333 100%);
     color: #FFD700;
@@ -304,6 +304,27 @@ body.page-not-found p {
     font-size: 24px;
     margin-bottom: 40px;
 }
+
+/* Custom Button Style for 404 Page */
+body.page-not-found button {
+    padding: 10px 20px;
+    background-color: #FF4500; /* Different button color from the rest of the site */
+    color: #FFF;
+    border: 2px solid #FF4500;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.page-not-found button:hover {
+    background-color: #FFF;
+    color: #FF4500;
+    box-shadow: 0 0 15px #FF4500, 0 0 20px #FF4500;
+}
+
 
 /* ==========================================================
    ============= Good & Bad Side Page Styles ================

@@ -28,6 +28,7 @@ export function renderPage() {
     }
 }
 
+
 // Call renderPage on initial load
 renderPage();
 
