@@ -284,6 +284,7 @@ function closeModal() {
    =============== Render: 404 Not Found Page ===============
    ========================================================== */
    export function pageNotFound() {
+    console.log('404 page rendered'); // Add this to check if the 404 page is called
     document.body.className = 'page-not-found'; // Reset body class
     
     // Dynamically add the background image
